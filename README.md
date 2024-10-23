@@ -14,7 +14,7 @@ Hvis vi tar en person sine siste tre årslønner:
 - 2023 - 24 000 kr
 - 2022 - 110 000 kr
 
-Så skal personen ha rett på en dagsats på 2116 kr
+Dermed skal personen ha rett på en dagsats på 2116 kr
 
 Antall årlige arbeidsdager i Norge er satt til å være 260, så ved beregning av dagsats må 260 dager
 brukes og ikke 365.
