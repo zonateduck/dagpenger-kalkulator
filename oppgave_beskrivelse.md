@@ -4,8 +4,9 @@ Gratuler med å bli kalt inn til intervju hos oss i Nav, nå ønsker vi å bli l
 du jobber og reflekter over kode. I denne oppgaven vil du bli gitt en eksisterende kodebase for en dagpenger kalkulator som du skal
 jobbe videre med. Vi anbefaler å bli bedre kjent med den eksisterende kodebasen før du hopper rett ut i kodingen 😄💻
 
-Kodebasen for [dagpenger kalkulatoren finner du her](https://github.com/navikt/dagpenger-kalkulator), og du kan lese mer [om
-hvordan kalkulatoren fungerer her](https://github.com/navikt/dagpenger-kalkulator/blob/main/README.md).
+Kodebasen for [dagpenger kalkulatoren finner du her](https://github.com/navikt/dagpenger-kalkulator).
+
+Du kan lese mer [om hvordan kalkulatoren fungerer her](https://github.com/navikt/dagpenger-kalkulator/blob/main/README.md).
 
 Du leverer inn din besvarelse på testen ved å publisere den i et GitHub repository og legger til følgende
 brukere som collaborators:
@@ -30,7 +31,9 @@ oppgave blir da å rydde opp i koden for å enklere kunne videreutvkle den.
 ### Del 2
 Etter å ha ryddet litt, skal du nå utvide kalkulatoren slik at kalkulasjonen kan godkjennes av en saksbehandler.
 En saksbehandler har en spesialisering, og skal godkjenne eller avslå resultater. En saksbehandler skal bare 
-behandle resultater innenfor sin spesialisering. Spesialiseringene er:
+behandle resultater innenfor sin spesialisering. 
+
+Spesialiseringene er:
 - Avslag på grunn av for lav inntekt
 - Innvilget
 - Innvilget med makssats
