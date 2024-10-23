@@ -8,12 +8,12 @@ Kodebasen for [dagpenger kalkulatoren finner du her](https://github.com/navikt/d
 
 Du kan lese mer [om hvordan kalkulatoren fungerer her](https://github.com/navikt/dagpenger-kalkulator/blob/main/README.md).
 
-Du leverer inn din besvarelse på testen ved å publisere den i et GitHub repository og legger til følgende
+Du leverer inn din besvarelse på oppgaven ved å publisere den i et GitHub repository og legger til følgende
 brukere som collaborators:
 - perkynades
 - hanneanes
 
-**Frist for å levere besvarelsen er lørdag 26. oktober, kl. 18:00**
+**Frist for å levere besvarelsen er etter avtale**
 
 ## Oppgaven
 I oppgaven du nå skal utføre er det ingen krav om å levere et brukergrensesnitt, det går derfor helt fint
