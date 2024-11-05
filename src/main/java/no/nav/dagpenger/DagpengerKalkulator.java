@@ -112,13 +112,28 @@ public class DagpengerKalkulator {
     public double summerNyligeÅrslønner(int antallÅrÅSummere) {
         double sumAvNyligeÅrslønner = 0;
 
-        /* Setter maks antall år til antall eksisterende årslønner
-         * hvis gitt antall overskrider tilgjengelig kapasitet */
+        /* Løsning for feilhåndtering:
+         * Setter maks antall år å summeres til antall eksisterende årslønner
+         * hvis gitt antall overskrider tilgjengelig kapasitet. */
         int maksÅr = Math.min(antallÅrÅSummere, this.årslønner.size());
 
         for (int indeks = 0; indeks < maksÅr; indeks++) {  
             sumAvNyligeÅrslønner += this.årslønner.get(indeks).hentÅrslønn();
         }
+
+        /* Alternativ løsning:
+         * Kaster unntak hvis gitt antall overskrider tilgjengelig kapasitet.
+         * Gir feilmelding dersom for høyt input blir gitt. 
+         */
+
+         /* if (antallÅrÅSummere > this.årslønner.size()) {
+          *     throw new IndexOutOfBoundsException("Antall år oppgitt overskrider antall mulige år å summere");
+          * }
+          * 
+          * for (int indeks = 0; indeks < this.antallÅrÅSummere; indeks++) {
+          *     sumAvNyligeÅrslønner += this.årslønner.get(indeks).hentÅrslønn();
+          * }
+          */
 
         return sumAvNyligeÅrslønner;
     }
