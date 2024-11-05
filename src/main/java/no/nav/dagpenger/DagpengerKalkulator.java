@@ -44,11 +44,11 @@ public class DagpengerKalkulator {
 
         int arbeidsdagerIÅret = 260;
         if (harRettigheterTilDagpenger() == true) {
-            if (velgBeregningsMetode() == "SISTE_ÅRSLØNN") {
+            if (velgBeregningsMetode().equals("SISTE_ÅRSLØNN")) {
                 dagsats = Math.ceil(hentÅrslønnVedIndeks(0).hentÅrslønn() / arbeidsdagerIÅret);
-            } else if (velgBeregningsMetode() == "GJENNOMSNITTET_AV_TRE_ÅR") {
+            } else if (velgBeregningsMetode().equals("GJENNOMSNITTET_AV_TRE_ÅR")) {
                 dagsats = Math.ceil((summerNyligeÅrslønner(3) / 3) / arbeidsdagerIÅret);
-            } else if (velgBeregningsMetode() == "MAKS_ÅRLIG_DAGPENGERGRUNNLAG") {
+            } else if (velgBeregningsMetode().equals("MAKS_ÅRLIG_DAGPENGERGRUNNLAG")) {
                 dagsats = Math.ceil(grunnbeløpVerktøy.hentMaksÅrligDagpengegrunnlag() / arbeidsdagerIÅret);
             }
         }
