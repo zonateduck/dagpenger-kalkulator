@@ -110,9 +110,17 @@ public class DagpengerKalkulator {
      * @return summen av årslønner.
      */
     public double summerNyligeÅrslønner(int antallÅrÅSummere) {
+        /* Feilhåndtering 1:
+         * Kaster unntak hvis gitt antall 'antallÅrÅSummere' er 0 eller mindre.
+         * Gir feilmelding som indikerer at antallet må være større enn null.
+        */
+        if (antallÅrÅSummere <= 0) {
+            throw new IllegalArgumentException("Antall år må være større enn null.");
+        }
+
         double sumAvNyligeÅrslønner = 0;
 
-        /* Løsning for feilhåndtering:
+        /* Løsning for feilhåndtering 2:
          * Setter maks antall år å summeres til antall eksisterende årslønner
          * hvis gitt antall overskrider tilgjengelig kapasitet. */
         int maksÅr = Math.min(antallÅrÅSummere, this.årslønner.size());
@@ -121,18 +129,18 @@ public class DagpengerKalkulator {
             sumAvNyligeÅrslønner += this.årslønner.get(indeks).hentÅrslønn();
         }
 
-        /* Alternativ løsning:
+        /* Alternativ løsning for feilhåndtering 2:
          * Kaster unntak hvis gitt antall overskrider tilgjengelig kapasitet.
-         * Gir feilmelding dersom for høyt input blir gitt. 
+         * Gir feilmelding som indikerer at antallet er for høyt. 
          */
 
          /* if (antallÅrÅSummere > this.årslønner.size()) {
-          *     throw new IndexOutOfBoundsException("Antall år oppgitt overskrider antall mulige år å summere");
-          * }
-          * 
-          * for (int indeks = 0; indeks < this.antallÅrÅSummere; indeks++) {
-          *     sumAvNyligeÅrslønner += this.årslønner.get(indeks).hentÅrslønn();
-          * }
+            throw new IndexOutOfBoundsException("Antall år oppgitt overskrider antall mulige år å summere.");
+          }
+          
+          for (int indeks = 0; indeks < this.antallÅrÅSummere; indeks++) {
+            sumAvNyligeÅrslønner += this.årslønner.get(indeks).hentÅrslønn();
+          }
           */
 
         return sumAvNyligeÅrslønner;
