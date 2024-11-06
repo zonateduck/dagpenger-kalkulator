@@ -49,12 +49,22 @@ public class DagpengerKalkulator {
             return 0;
         }
 
-        if (velgBeregningsMetode().equals(SISTE_ÅRSLØNN)) {
-            return Math.ceil(hentÅrslønnVedIndeks(0).hentÅrslønn() / ARBEIDSDAGER_I_ÅRET);
-        } else if (velgBeregningsMetode().equals(GJENNOMSNITT_AV_TRE_ÅR)) {
-            return Math.ceil((summerNyligeÅrslønner(3) / 3) / ARBEIDSDAGER_I_ÅRET);
-        } else if (velgBeregningsMetode().equals(MAKS_ÅRLIG_DAGPENGERGRUNNLAG)) {
-            return Math.ceil(grunnbeløpVerktøy.hentMaksÅrligDagpengegrunnlag() / ARBEIDSDAGER_I_ÅRET);
+        double sisteÅrslønn = hentÅrslønnVedIndeks(0).hentÅrslønn();
+        double gjennomsnittTreÅr = summerNyligeÅrslønner(3) / 3;
+        double maksÅrligDagpengegrunnlag = grunnbeløpVerktøy.hentMaksÅrligDagpengegrunnlag();
+
+        String beregningsMetode = velgBeregningsMetode();
+
+        if (beregningsMetode.equals(SISTE_ÅRSLØNN)) {
+            return Math.ceil(sisteÅrslønn / ARBEIDSDAGER_I_ÅRET);
+        }
+        
+        if (beregningsMetode.equals(GJENNOMSNITT_AV_TRE_ÅR)) {
+            return Math.ceil(gjennomsnittTreÅr / ARBEIDSDAGER_I_ÅRET);
+        }
+        
+        if (beregningsMetode.equals(MAKS_ÅRLIG_DAGPENGERGRUNNLAG)) {
+            return Math.ceil(maksÅrligDagpengegrunnlag / ARBEIDSDAGER_I_ÅRET);
         }
 
         return 0;
@@ -81,11 +91,13 @@ public class DagpengerKalkulator {
      * @return Beregningsmetode for dagsats.
      */
     public String velgBeregningsMetode() {
-        if (hentÅrslønnVedIndeks(0).hentÅrslønn() <= (summerNyligeÅrslønner(3) / 3)) {
+        double årslønnVedIndeks = hentÅrslønnVedIndeks(0).hentÅrslønn();
+
+        if (årslønnVedIndeks <= (summerNyligeÅrslønner(3) / 3)) {
             return GJENNOMSNITT_AV_TRE_ÅR;
         }
 
-        if (hentÅrslønnVedIndeks(0).hentÅrslønn() > grunnbeløpVerktøy.hentMaksÅrligDagpengegrunnlag()) {
+        if (årslønnVedIndeks > grunnbeløpVerktøy.hentMaksÅrligDagpengegrunnlag()) {
             return MAKS_ÅRLIG_DAGPENGERGRUNNLAG;
         }
 
