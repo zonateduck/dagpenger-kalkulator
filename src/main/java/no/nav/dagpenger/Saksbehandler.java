@@ -16,6 +16,7 @@ public class Saksbehandler {
     /* Spesialiseringen til saksbehandleren */
     private spesialisering Spesialisering;
 
+    // Konstruktør til saksbehandlerklassen
     public Saksbehandler(Spesialisering spesialisering) {
 
         this.spesialisering = spesialisering;
