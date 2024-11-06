@@ -29,8 +29,8 @@ public enum Spesialisering {
     }
 
     /**
-     * Metode for å hente godkjenning for spesialiseringen
-     * @return godkjent-verdien.
+     * Metode for å hente godkjenning for spesialiseringen.
+     * @return Godkjent-verdien.
      */
     public boolean erGodkjent() {
         return this.godkjent;
