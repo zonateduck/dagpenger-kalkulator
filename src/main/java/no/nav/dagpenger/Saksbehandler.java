@@ -13,9 +13,36 @@ package no.nav.dagpenger;
  */
 public class Saksbehandler {
 
-    public Saksbehandler() {}
+    /* Spesialiseringen til saksbehandleren */
+    private spesialisering Spesialisering;
 
-    public hentSpesialisering() {}
-    public behandleResultat() {}
+    public Saksbehandler(Spesialisering spesialisering) {
+
+        this.spesialisering = spesialisering;
+
+    }
+
+    /**
+     * Behandler resultat fra kalkulering av dagpenger til en person.
+     * Sjekker om resulatet er innenfor spesialiseringen til saksbehandleren:
+     * Setter godkjenning basert på den gjeldende spesialiseringen.
+     * @param resultat resultatet som skal vurderes.
+     * @return om resultatet er godkjent av saksbehandleren.
+    */
+    public boolean behandleResultat(Resultat resultat) {
+
+        return false;
+
+    }
+
+    /**
+     * Henter spesialiseringen saksbehandleren er satt til.
+     * @return spesialiseringen.
+    */
+    public Spesialisering hentSpesialisering() {
+
+        return this.spesialisering;
+
+    }
 
 }
