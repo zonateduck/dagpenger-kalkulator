@@ -13,7 +13,7 @@ package no.nav.dagpenger;
  */
 public class Saksbehandler {
     /* Spesialiseringen til saksbehandleren */
-    private spesialisering Spesialisering;
+    private Spesialisering spesialisering;
 
     /**
      * Oppretter en ny saksbehandler.
